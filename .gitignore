@@ -1,0 +1,56 @@
+# Data directories
+/datasets
+*.mat
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+deltagatenet/
+
+# Training outputs
+logs/
+/logs
+checkpoints/
+*.log
+runs/
+tensorboard/
+results/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model files
+*.pth
+*.ckpt
+*.pt
+*.safetensors
+.claude/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+Archives/
