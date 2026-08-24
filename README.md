@@ -1,6 +1,4 @@
-# DeltaGateNet
-
-**Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition**
+# DeltaGateNet: Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition**
 
 [arXiv:2602.14071](https://arxiv.org/abs/2602.14071)
 
