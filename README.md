@@ -15,7 +15,7 @@
 
 Driving fatigue is a major contributor to traffic accidents. Electroencephalography (EEG) provides a direct measurement of neural activity, yet EEG-based fatigue recognition is hindered by strong non-stationarity and asymmetric neural dynamics. **DeltaGateNet** captures bidirectional temporal dynamics with a Bidirectional Delta module that decomposes first-order differences into positive and negative components, then models long-term, channel-specific dependencies with gated temporal convolution.
 
-On [SEED-VIG](https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html), DeltaGateNet reaches **81.89%** intra-subject and **55.55%** inter-subject accuracy. On balanced SADT 2022 it reaches **96.81%** / **83.21%**, and on unbalanced SADT 2952 **96.84%** / **84.49%**.
+On SEED-VIG, DeltaGateNet reaches **81.89%** intra-subject and **55.55%** inter-subject accuracy. On balanced SADT 2022 it reaches **96.81%** / **83.21%**, and on unbalanced SADT 2952 **96.84%** / **84.49%**.
 
 The model is dataset-agnostic: set `--num_channels` and `--num_classes` from the training entry point. Remaining architecture and training hyperparameters are hardcoded to the paper/notebook values.
 
@@ -24,7 +24,7 @@ The model is dataset-agnostic: set `--num_channels` and `--num_classes` from the
 ### Environment Setup
 
 > [!TIP]
-> Local users: all packages are listed in `./environment.yml`. Colab users can install from `./requirements.txt`.
+> Local users: all packages are listed in `./environment.yml` and `./requirements.txt`. The Colab notebook installs the same packages itself.
 
 ```bash
 # Create environment
@@ -75,8 +75,6 @@ Download the Cui et al. processed release (extracted from Cao et al., *Scientifi
 
 > [!IMPORTANT]
 > Keep the Figshare `.mat` variables **`EEGsample`**, **`subindex`**, and **`substate`**. Place the file in `datasets/SADT-2022/` or `datasets/SADT-2952/` (any `*.mat` name is fine). Default model knobs: `--num_channels 30 --num_classes 2`.
->
-> If you use this processed SADT data, please also credit Cao et al. (original recordings) and Cui et al. (alert/drowsy extraction).
 
 Please place files under the following tree:
 
@@ -140,11 +138,10 @@ On Windows, run the same commands in Git Bash or WSL.
 Click the Colab icon above, or take the notebook from [`colab_notebooks/`](colab_notebooks/).
 
 1. Open [`colab_notebooks/DeltaGateNet_Colab.ipynb`](colab_notebooks/DeltaGateNet_Colab.ipynb) in Google Colab (File → Upload notebook).
-2. Upload this repository to Drive (keep the folder layout).
-3. Put `datasets/` on Drive using the tree above, or point `DATA_DIR` at an existing copy.
-4. Set `REPO_DIR` / `DATA_DIR` in the config cell if your Drive paths differ, then **Runtime → Run all**.
+2. Put **datasets only** on Drive using the tree above, or point `DATA_DIR` at an existing copy.
+3. Set `DATA_DIR` in the config cell if your Drive path differs, then **Runtime → Run all**.
 
-The notebook mounts Drive, installs `requirements.txt`, and trains with `run_cross_validation` in Python.
+The notebook is self-contained: it installs packages itself and does not import this repository. Checkpoints and plots go to `/content/logs` unless you change `OUTPUT_DIR`.
 
 ## Citation
 
