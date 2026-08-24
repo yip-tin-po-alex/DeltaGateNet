@@ -1,6 +1,7 @@
-# DeltaGateNet: Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition**
+# DeltaGateNet: Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition
 
-[arXiv:2602.14071](https://arxiv.org/abs/2602.14071)
+[![arXiv](https://img.shields.io/badge/arXiv-preprint-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2602.14071)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](colab_notebooks/DeltaGateNet_Colab.ipynb)
 
 ## Overview
 
@@ -136,19 +137,14 @@ On Windows, run the same commands in Git Bash or WSL.
 
 ### Google Colab
 
-1. Upload this repository to Drive (keep the folder layout).
-2. Put `datasets/` on Drive using the tree above, or point `DATA_DIR` at an existing copy.
-3. Open [`notebooks/DeltaGateNet_Colab.ipynb`](notebooks/DeltaGateNet_Colab.ipynb), set `REPO_DIR` / `DATA_DIR`, and run all cells.
+Click the Colab icon above, or take the notebook from [`colab_notebooks/`](colab_notebooks/).
 
-The notebook mounts Drive, installs `requirements.txt`, and calls `run_script/run_colab.sh`.
+1. Open [`colab_notebooks/DeltaGateNet_Colab.ipynb`](colab_notebooks/DeltaGateNet_Colab.ipynb) in Google Colab (File → Upload notebook).
+2. Upload this repository to Drive (keep the folder layout).
+3. Put `datasets/` on Drive using the tree above, or point `DATA_DIR` at an existing copy.
+4. Set `REPO_DIR` / `DATA_DIR` in the config cell if your Drive paths differ, then **Runtime → Run all**.
 
-```bash
-# Equivalent Colab command after `cd` into the repo
-DATASET=seed-vig \
-DATA_DIR="/content/drive/My Drive/Driving Fatigue Project/Data/SEED-VIG" \
-NUM_CHANNELS=17 NUM_CLASSES=3 MODE=intra \
-bash run_script/run_colab.sh
-```
+The notebook mounts Drive, installs `requirements.txt`, and trains with `run_cross_validation` in Python.
 
 ## Citation
 
